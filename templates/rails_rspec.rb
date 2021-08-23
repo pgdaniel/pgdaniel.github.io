@@ -1,3 +1,6 @@
+gem 'turbo-rails'
+gem 'devise'
+
 gem_group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
@@ -18,6 +21,16 @@ initializer 'generators.rb', <<-CODE
     end
 CODE
 
+initializer 'README.md', <<-CODE
+# This was initialized from a template with:
+
+* rspec and friends
+* turbo
+* devise
+CODE
+
 after_bundle do
   generate 'rspec:install'
+  generate 'turbo:install'
+  generate 'devise:install'
 end
